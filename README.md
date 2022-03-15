@@ -38,7 +38,7 @@ Usage
 After installation, you can run the tools like this:
 
 ```bash
-./vendor/bin/php-cs-fixer fix --dry-run --diff --config vendor-bin/cs-fixer/vendor/21torr/php-cs-fixer/.php_cs.dist
+./vendor/bin/php-cs-fixer fix --dry-run --diff --config vendor-bin/cs-fixer/vendor/21torr/php-cs-fixer/.php-cs-fixer.dist.php
 ```
 
 [composer-bin-plugin]: https://github.com/bamarni/composer-bin-plugin
