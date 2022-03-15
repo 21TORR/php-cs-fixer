@@ -1,0 +1,27 @@
+{
+	"name": "21torr/php-cs-fixer",
+	"description": "PHP-CS-Fixer Config for 21TORR Projects",
+	"license": "BSD-3-Clause",
+	"type": "lib",
+	"authors": [
+		{
+			"name": "21TORR",
+			"homepage": "https://www.21torr.com/"
+		}
+	],
+	"homepage": "https://github.com/21TORR/php-cs-fixer",
+	"require": {
+		"php": ">= 8.0",
+		"friendsofphp/php-cs-fixer": "^3.7.0",
+		"kubawerlos/php-cs-fixer-custom-fixers": "^3.9.0"
+	},
+	"require-dev": {
+		"roave/security-advisories": "dev-latest"
+	},
+	"config": {
+		"allow-plugins": {
+			"ergebnis/composer-normalize": true
+		},
+		"sort-packages": true
+	}
+}
