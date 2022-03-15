@@ -30,13 +30,11 @@ $finder = PhpCsFixer\Finder::create()
 	->exclude(["Migrations", "node_modules", "var", "vendor", "vendor-bin"])
 	->ignoreUnreadableDirs();
 
-$config = new PhpCsFixer\Config();
-
-$config
+$config = (new PhpCsFixer\Config())
 	->setIndent("\t")
 	->setFinder($finder)
 	->setRiskyAllowed(true)
-	->setRules(array_replace($config->getRules(),
+	->setRules(
 		[
 			"@PSR1" => true,
 			"align_multiline_comment" => [
@@ -270,15 +268,13 @@ $config
 			"whitespace_after_comma_in_array" => true,
 			"yoda_style" => true,
 		]
-	));
-
+	);
 
 if (class_exists(CustomFixers::class))
 {
 	$config
 		->registerCustomFixers(new CustomFixers())
 		->setRules(array_replace($config->getRules(), [
-			CustomFixer\CommentSurroundedBySpacesFixer::name() => true,
 			CustomFixer\ConstructorEmptyBracesFixer::name() => true,
 			CustomFixer\DataProviderNameFixer::name() => [
 				"prefix" => "provide",
@@ -300,7 +296,8 @@ if (class_exists(CustomFixers::class))
 			CustomFixer\PhpdocSingleLineVarFixer::name() => true,
 			CustomFixer\PhpdocTypesCommaSpacesFixer::name() => true,
 			CustomFixer\PhpdocVarAnnotationToAssertFixer::name() => true,
-			CustomFixer\SingleSpaceAfterStatementFixer::name() => true,
+			// this rule breaks the braces placement
+			// CustomFixer\SingleSpaceAfterStatementFixer::name() => true,
 			CustomFixer\SingleSpaceBeforeStatementFixer::name() => true,
 			CustomFixer\StringableInterfaceFixer::name() => true,
 		]));
