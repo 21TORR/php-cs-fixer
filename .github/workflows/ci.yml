@@ -1,0 +1,38 @@
+name: CI
+
+on: [ push ]
+
+jobs:
+    build-test:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                php: ['8.0']
+
+        steps:
+            -   name: Checkout Code
+                uses: actions/checkout@v2
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    coverage: "none"
+                    ini-values: "memory_limit=-1"
+                    php-version: "${{ matrix.php }}"
+                    tools: "composer, composer-normalize, cs2pr"
+
+            -   name: Display versions
+                run: |
+                    php --version
+                    php -r 'foreach (get_loaded_extensions() as $extension) echo $extension . " " . phpversion($extension) . PHP_EOL;'
+                    php -i
+
+            -   name: Install Composer
+                run: composer install --optimize-autoloader --classmap-authoritative --no-interaction
+
+            -   name: Composer Normalize
+                run: composer-normalize --indent-style tab --indent-size 1 --dry-run --ansi
+
+            -   name: Check PHP-CS-Fixer Config
+                run: mkdir src && ./vendor/bin/php-cs-fixer fix --diff --config .php-cs-fixer.dist.php --dry-run --no-interaction
