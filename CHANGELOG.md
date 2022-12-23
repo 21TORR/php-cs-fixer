@@ -1,3 +1,9 @@
+1.0.2
+=====
+
+* (improvement) Exclude `secrets` dir.
+
+
 1.0.1
 =====
 
