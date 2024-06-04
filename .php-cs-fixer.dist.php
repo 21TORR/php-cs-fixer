@@ -57,6 +57,10 @@ $config = (new PhpCsFixer\Config())
 		// This ensures that we know that disabling a rule was a deliberate choice and not just
 		// forgotten / overlooked.
 		//
+		// Last checked:
+		//   friendsofphp/php-cs-fixer: v3.58
+		//   kubawerlos/php-cs-fixer-custom-fixers: v3.21
+		//
 
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		// Rule Sets
