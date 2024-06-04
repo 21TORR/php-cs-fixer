@@ -52,7 +52,7 @@ $config = (new PhpCsFixer\Config())
 		// - every deprecated rule is excluded
 		// - every experimental rule is excluded
 		// - all other rules are included
-		// - disabled rules are added commented out (with an optional reason behind it)
+		// - disabled rules are added commented out (with an optional reason under it)
 		//
 		// This ensures that we know that disabling a rule was a deliberate choice and not just
 		// forgotten / overlooked.
@@ -112,26 +112,28 @@ $config = (new PhpCsFixer\Config())
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		// Basic
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		// unfortunately, this still breaks curly braces in method declarations: they stay on the same line
-		//"braces_position" => [
-		//	"allow_single_line_anonymous_functions" => true,
-		//	"allow_single_line_empty_anonymous_classes" => true,
-		//	"anonymous_classes_opening_brace" => "next_line_unless_newline_at_signature_end",
-		//	"anonymous_functions_opening_brace" => "next_line_unless_newline_at_signature_end",
-		//	"classes_opening_brace" => "next_line_unless_newline_at_signature_end",
-		//	"control_structures_opening_brace" => "next_line_unless_newline_at_signature_end",
-		//	"functions_opening_brace" => "next_line_unless_newline_at_signature_end",
+		// "braces_position" => [
+		// 	"allow_single_line_anonymous_functions" => true,
+		// 	"allow_single_line_empty_anonymous_classes" => true,
+		// 	"anonymous_classes_opening_brace" => "next_line_unless_newline_at_signature_end",
+		// 	"anonymous_functions_opening_brace" => "next_line_unless_newline_at_signature_end",
+		// 	"classes_opening_brace" => "next_line_unless_newline_at_signature_end",
+		// 	"control_structures_opening_brace" => "next_line_unless_newline_at_signature_end",
+		// 	"functions_opening_brace" => "next_line_unless_newline_at_signature_end",
 		//],
+		//  └> unfortunately, this still breaks curly braces in method declarations: they stay on the same line
 		"encoding" => true,
 		"no_multiple_statements_per_line" => true,
 		"no_trailing_comma_in_singleline" => true,
 		"non_printable_character" => [
 			"use_escape_sequences_in_strings" => true,
 		],
-		// "numeric_literal_separator" => false, (the dev can decide)
+		// "numeric_literal_separator" => false,
+		//  └> the dev should be able to decide
 		"octal_notation" => true,
 		"psr_autoloading" => true,
-		"single_line_empty_body" => true,
+		// "single_line_empty_body" => true,
+		//  └> breaks for empty classes (moves the braces to the same line)
 
 
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -207,7 +209,8 @@ $config = (new PhpCsFixer\Config())
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		// Class Usage
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		// "date_time_immutable" => false, (you should always use immutables, but we don't want to automatically rewrite it)
+		// "date_time_immutable" => false,
+		//  └> you should always use immutables, but we don't want to automatically rewrite it
 
 
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -300,7 +303,8 @@ $config = (new PhpCsFixer\Config())
 			"strict" => true,
 		],
 		"no_spaces_after_function_name" => true,
-		// "no_unreachable_default_argument_value" => false, (checked by PhpStan)
+		// "no_unreachable_default_argument_value" => false,
+		//  └> checked by PhpStan
 		"no_useless_sprintf" => true,
 		"nullable_type_declaration_for_default_null_value" => true,
 		// "regular_callable_call" => false,
@@ -331,7 +335,7 @@ $config = (new PhpCsFixer\Config())
 				"class",
 				"function",
 				"const",
-				],
+			],
 			"sort_algorithm" => "alpha",
 		],
 		"single_import_per_statement" => true,
@@ -357,7 +361,8 @@ $config = (new PhpCsFixer\Config())
 		"nullable_type_declaration" => [
 			"syntax" => "question_mark",
 		],
-		"single_space_around_construct" => true,
+		// this breaks spaces placement for `try {`
+		// "single_space_around_construct" => false,
 
 
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -429,7 +434,8 @@ $config = (new PhpCsFixer\Config())
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		// PHPUnit
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		// "php_unit_attributes" => true, (we can't fully update to newer PHPUnit versions yet)
+		// "php_unit_attributes" => true,
+		//  └> we can't fully update to newer PHPUnit versions yet
 		"php_unit_construct" => true,
 		"php_unit_data_provider_name" => [
 			"prefix" => "provide",
