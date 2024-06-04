@@ -2,6 +2,8 @@
 =====
 
 * (feature) Automatically enable parallel fixing.
+* (feature) Update all rules.
+* (improvement) Remove and replace deprecated rule usage.
 
 
 1.0.2
