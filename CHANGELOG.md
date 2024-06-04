@@ -1,3 +1,10 @@
+1.1.2
+=====
+
+* (bug) Disable `phpdoc_to_comment` as it breaks property PHPDocs without tag.
+* (bug) Disable `method_chaining_indentation` as it breaks for Symfony Configuration classes.
+
+
 1.1.1
 =====
 

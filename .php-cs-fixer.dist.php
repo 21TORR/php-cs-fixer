@@ -515,7 +515,8 @@ $config = (new PhpCsFixer\Config())
 		// "phpdoc_summary" => false,
 		// "phpdoc_tag_casing" => false,
 		// "phpdoc_tag_type" => false,
-		"phpdoc_to_comment" => true,
+		// "phpdoc_to_comment" => true,
+		//  └> We sometimes want to keep PHPdocs without any tag (like for properties)
 		"phpdoc_trim_consecutive_blank_line_separation" => true,
 		"phpdoc_trim" => true,
 		"phpdoc_types" => true,
@@ -593,7 +594,8 @@ $config = (new PhpCsFixer\Config())
 		"heredoc_indentation" => true,
 		"indentation_type" => true,
 		"line_ending" => true,
-		"method_chaining_indentation" => true,
+		// "method_chaining_indentation" => false,
+		//  └> This breaks Symfony Configuration classes
 		"no_extra_blank_lines" => [
 			"tokens" => [
 				"attribute",
