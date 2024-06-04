@@ -644,8 +644,6 @@ $config = (new PhpCsFixer\Config())
 		CustomFixer\PhpdocTypesCommaSpacesFixer::name() => true,
 		CustomFixer\PhpdocTypesTrimFixer::name() => true,
 		CustomFixer\PhpdocVarAnnotationToAssertFixer::name() => true,
-		// this rule breaks the braces placement
-		// CustomFixer\SingleSpaceAfterStatementFixer::name() => true,
 		CustomFixer\SingleSpaceBeforeStatementFixer::name() => true,
 		CustomFixer\StringableInterfaceFixer::name() => true,
 	]);
