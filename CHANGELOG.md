@@ -1,3 +1,9 @@
+1.1.0
+=====
+
+* (feature) Automatically enable parallel fixing.
+
+
 1.0.2
 =====
 
