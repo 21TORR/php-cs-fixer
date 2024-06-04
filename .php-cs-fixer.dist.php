@@ -594,7 +594,8 @@ $config = (new PhpCsFixer\Config())
 		"heredoc_indentation" => true,
 		"indentation_type" => true,
 		"line_ending" => true,
-		"method_chaining_indentation" => true,
+		// "method_chaining_indentation" => false,
+		//  └> This breaks Symfony Configuration classes
 		"no_extra_blank_lines" => [
 			"tokens" => [
 				"attribute",
