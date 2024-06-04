@@ -1,3 +1,11 @@
+1.1.1
+=====
+
+* (bug) Remove breaking rule.
+* (improvement) Fill list of checked custom fixer rules.
+* (improvement) Improve comment style in config file.
+
+
 1.1.0
 =====
 
