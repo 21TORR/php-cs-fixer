@@ -251,10 +251,10 @@ $config = (new PhpCsFixer\Config())
 		"trailing_comma_in_multiline" => [
 			"after_heredoc" => true,
 			"elements" => [
-				'arguments',
-				'arrays',
-				'match',
-				'parameters',
+				"arguments",
+				"arrays",
+				"match",
+				"parameters",
 			],
 		],
 		"yoda_style" => true,
@@ -321,8 +321,14 @@ $config = (new PhpCsFixer\Config())
 		"no_leading_import_slash" => true,
 		"no_unneeded_import_alias" => true,
 		"no_unused_imports" => true,
-		// @todo group
-		"ordered_imports" => true,
+		"ordered_imports" => [
+			"imports_order" => [
+				"class",
+				"function",
+				"const",
+				],
+			"sort_algorithm" => "alpha",
+		],
 		"single_import_per_statement" => true,
 		"single_line_after_imports" => true,
 
@@ -475,10 +481,10 @@ $config = (new PhpCsFixer\Config())
 		"phpdoc_no_useless_inheritdoc" => true,
 		// "phpdoc_order_by_value" => false,
 		"phpdoc_order" => [
-			'order' => [
-				'param',
-				'return',
-				'throws',
+			"order" => [
+				"param",
+				"return",
+				"throws",
 			],
 		],
 		"phpdoc_param_order" => true,
@@ -486,12 +492,12 @@ $config = (new PhpCsFixer\Config())
 		"phpdoc_scalar" => true,
 		"phpdoc_separation" => [
 			// use Symfony's config
-			'groups' => [
-				['Annotation', 'NamedArgumentConstructor', 'Target'],
-				['author', 'copyright', 'license'],
-				['category', 'package', 'subpackage'],
-				['property', 'property-read', 'property-write'],
-				['deprecated', 'link', 'see', 'since'],
+			"groups" => [
+				["Annotation", "NamedArgumentConstructor", "Target"],
+				["author", "copyright", "license"],
+				["category", "package", "subpackage"],
+				["property", "property-read", "property-write"],
+				["deprecated", "link", "see", "since"],
 			],
 		],
 		"phpdoc_single_line_var_spacing" => true,
@@ -578,19 +584,19 @@ $config = (new PhpCsFixer\Config())
 		"line_ending" => true,
 		"method_chaining_indentation" => true,
 		"no_extra_blank_lines" => [
-			'tokens' => [
-				'attribute',
-				'case',
-				'continue',
-				'curly_brace_block',
-				'default',
-				'extra',
-				'parenthesis_brace_block',
+			"tokens" => [
+				"attribute",
+				"case",
+				"continue",
+				"curly_brace_block",
+				"default",
+				"extra",
+				"parenthesis_brace_block",
 				"return",
-				'square_brace_block',
-				'switch',
-				'throw',
-				'use',
+				"square_brace_block",
+				"switch",
+				"throw",
+				"use",
 			],
 		],
 		"no_spaces_around_offset" => true,
