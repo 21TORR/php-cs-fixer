@@ -1,3 +1,9 @@
+1.1.2
+=====
+
+* (bug) Disable `phpdoc_to_comment` as it breaks property PHPDocs without tag.
+
+
 1.1.1
 =====
 
