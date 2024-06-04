@@ -108,15 +108,16 @@ $config = (new PhpCsFixer\Config())
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		// Basic
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		"braces_position" => [
-			"allow_single_line_anonymous_functions" => true,
-			"allow_single_line_empty_anonymous_classes" => true,
-			"anonymous_classes_opening_brace" => "next_line_unless_newline_at_signature_end",
-			"anonymous_functions_opening_brace" => "next_line_unless_newline_at_signature_end",
-			"classes_opening_brace" => "next_line_unless_newline_at_signature_end",
-			"control_structures_opening_brace" => "next_line_unless_newline_at_signature_end",
-			"functions_opening_brace" => "next_line_unless_newline_at_signature_end",
-		],
+		// unfortunately, this still breaks curly braces in method declarations: they stay on the same line
+		//"braces_position" => [
+		//	"allow_single_line_anonymous_functions" => true,
+		//	"allow_single_line_empty_anonymous_classes" => true,
+		//	"anonymous_classes_opening_brace" => "next_line_unless_newline_at_signature_end",
+		//	"anonymous_functions_opening_brace" => "next_line_unless_newline_at_signature_end",
+		//	"classes_opening_brace" => "next_line_unless_newline_at_signature_end",
+		//	"control_structures_opening_brace" => "next_line_unless_newline_at_signature_end",
+		//	"functions_opening_brace" => "next_line_unless_newline_at_signature_end",
+		//],
 		"encoding" => true,
 		"no_multiple_statements_per_line" => true,
 		"no_trailing_comma_in_singleline" => true,
@@ -276,11 +277,11 @@ $config = (new PhpCsFixer\Config())
 		"date_time_create_from_format_call" => true,
 		// "fopen_flag_order" => false,
 		// "fopen_flags" => false,
-		"function_declaration" => [
-			"closure_fn_spacing" => "one",
-			"closure_function_spacing" => "one",
-			"trailing_comma_single_line" => false,
-		],
+		//"function_declaration" => [
+		//	"closure_fn_spacing" => "one",
+		//	"closure_function_spacing" => "one",
+		//	"trailing_comma_single_line" => false,
+		//],
 		"implode_call" => true,
 		"lambda_not_used_import" => true,
 		"method_argument_space" => [
@@ -424,7 +425,7 @@ $config = (new PhpCsFixer\Config())
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		// PHPUnit
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		"php_unit_attributes" => true,
+		// "php_unit_attributes" => true, (we can't fully update to newer PHPUnit versions yet)
 		"php_unit_construct" => true,
 		"php_unit_data_provider_name" => [
 			"prefix" => "provide",
@@ -617,7 +618,6 @@ $config = (new PhpCsFixer\Config())
 		// Custom Fixers from kubawerlos/php-cs-fixer-custom-fixers
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		CustomFixer\CommentSurroundedBySpacesFixer::name() => true,
-		CustomFixer\ConstructorEmptyBracesFixer::name() => true,
 		CustomFixer\DeclareAfterOpeningTagFixer::name() => true,
 		CustomFixer\EmptyFunctionBodyFixer::name() => true,
 		CustomFixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
