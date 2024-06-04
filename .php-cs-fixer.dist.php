@@ -278,26 +278,43 @@ $config = (new PhpCsFixer\Config())
 		"yoda_style" => true,
 
 		// custom fixes
+		CustomFixer\CommentSurroundedBySpacesFixer::name() => true,
 		CustomFixer\ConstructorEmptyBracesFixer::name() => true,
+		// REPLACE: php_unit_data_provider_name
 		CustomFixer\DataProviderNameFixer::name() => [
 			"prefix" => "provide",
 			"suffix" => "",
 		],
+		// php_unit_data_provider_return_type
 		CustomFixer\DataProviderReturnTypeFixer::name() => true,
+		// php_unit_data_provider_static
 		CustomFixer\DataProviderStaticFixer::name() => true,
 		CustomFixer\DeclareAfterOpeningTagFixer::name() => true,
+		CustomFixer\EmptyFunctionBodyFixer::name() => true,
+		// class_reference_name_casing
+		CustomFixer\MultilineCommentOpeningClosingAloneFixer::name() => true,
 		CustomFixer\MultilinePromotedPropertiesFixer::name() => true,
 		CustomFixer\NoDoctrineMigrationsGeneratedCommentFixer::name() => true,
 		CustomFixer\NoDuplicatedArrayKeyFixer::name() => true,
 		CustomFixer\NoDuplicatedImportsFixer::name() => true,
 		CustomFixer\NoImportFromGlobalNamespaceFixer::name() => true,
+		CustomFixer\NoSuperfluousConcatenationFixer::name() => true,
+		CustomFixer\NoTrailingCommaInSinglelineFixer::name() => true,
+		CustomFixer\NoUselessParenthesisFixer::name() => true,
+		CustomFixer\NoUselessStrlenFixer::name() => true,
+		// numeric_literal_separator
+		CustomFixer\PhpUnitAssertArgumentsOrderFixer::name() => true,
+		CustomFixer\PhpUnitDedicatedAssertFixer::name() => true,
 		CustomFixer\PhpUnitNoUselessReturnFixer::name() => true,
 		CustomFixer\PhpdocNoSuperfluousParamFixer::name() => true,
+		// phpdoc_param_order
 		CustomFixer\PhpdocParamOrderFixer::name() => true,
 		CustomFixer\PhpdocParamTypeFixer::name() => true,
 		CustomFixer\PhpdocSelfAccessorFixer::name() => true,
 		CustomFixer\PhpdocSingleLineVarFixer::name() => true,
+		// phpdoc_list_type
 		CustomFixer\PhpdocTypesCommaSpacesFixer::name() => true,
+		CustomFixer\PhpdocTypesTrimFixer::name() => true,
 		CustomFixer\PhpdocVarAnnotationToAssertFixer::name() => true,
 		// this rule breaks the braces placement
 		// CustomFixer\SingleSpaceAfterStatementFixer::name() => true,
