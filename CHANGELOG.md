@@ -1,3 +1,9 @@
+1.1.3
+=====
+
+* (improvement) Fix inside more dirs and simplify the directory logic.
+
+
 1.1.2
 =====
 
