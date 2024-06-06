@@ -6,28 +6,29 @@ use PhpCsFixerCustomFixers\Fixers as CustomFixers;
 
 $cwd = \getcwd();
 
-if (\is_dir("{$cwd}/src") && (\is_dir("{$cwd}/public") || \is_dir("{$cwd}/web")))
-{
-	$dirs = [];
+// filter list of possible dirs to only existing ones
+$dirsToFix = array_filter(
+	[
+		"app",
+		"config",
+		"custom",
+		"public",
+		"src",
+		"tests",
+		"web",
+	],
+	static fn (string $dir) => \is_dir("{$cwd}/{$dir}"),
+);
 
-	// this is a symfony project, so add possible symfony directories
-	// "custom" is a default directory of Shopware projects
-	foreach (["app", "config", "custom", "public", "src", "tests", "web"] as $possibleDir)
-	{
-		if (\is_dir("{$cwd}/{$possibleDir}"))
-		{
-			$dirs[] = $possibleDir;
-		}
-	}
-}
-else
+// always add "src" as default dir
+if ([] === $dirsToFix)
 {
-	// regular library, so just lint everything
-	$dirs = ["src"];
+	$dirsToFix[] = "src";
 }
+
 
 $finder = PhpCsFixer\Finder::create()
-	->in($dirs)
+	->in($dirsToFix)
 	->exclude([
 		"Migrations",
 		"node_modules",
