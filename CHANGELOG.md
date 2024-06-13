@@ -1,3 +1,9 @@
+1.1.4
+=====
+
+* (improvement) Make sure to always import FQCNs.
+
+
 1.1.3
 =====
 

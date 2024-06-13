@@ -321,7 +321,9 @@ $config = (new PhpCsFixer\Config())
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		// Import
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		"fully_qualified_strict_types" => true,
+		"fully_qualified_strict_types" => [
+			"import_symbols" => true,
+		],
 		"global_namespace_import" => [
 			"import_classes" => false,
 			"import_constants" => false,
