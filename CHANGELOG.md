@@ -1,3 +1,9 @@
+1.1.5
+=====
+
+* (improvement) Fix overly strict rules for PHPUnit.
+
+
 1.1.4
 =====
 

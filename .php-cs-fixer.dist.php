@@ -458,7 +458,8 @@ $config = (new PhpCsFixer\Config())
 		"php_unit_no_expectation_annotation" => true,
 		"php_unit_set_up_tear_down_visibility" => true,
 		// "php_unit_size_class" => false,
-		"php_unit_strict" => true,
+		// "php_unit_strict" => true,
+		//  └> sometimes you need assertEquals() and this way you can't have that.
 		"php_unit_test_annotation" => [
 			"style" => "prefix",
 		],
