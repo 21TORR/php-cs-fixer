@@ -3,6 +3,7 @@
 
 * (improvement) Use newer PHP-CS-Fixer version.
 * (improvement) Also run CS fixer for migrations.
+* (improvement) Require PHP 8.4
 
 
 1.1.5
