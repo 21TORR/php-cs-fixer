@@ -2,6 +2,7 @@
 =====
 
 * (improvement) Use newer PHP-CS-Fixer version.
+* (improvement) Also run CS fixer for migrations.
 
 
 1.1.5
