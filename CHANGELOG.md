@@ -1,3 +1,9 @@
+1.1.6
+=====
+
+* (improvement) Use newer PHP-CS-Fixer version.
+
+
 1.1.5
 =====
 

@@ -12,8 +12,8 @@
 	"homepage": "https://github.com/21TORR/php-cs-fixer",
 	"require": {
 		"php": ">= 8.0",
-		"friendsofphp/php-cs-fixer": "^3.58.1",
-		"kubawerlos/php-cs-fixer-custom-fixers": "^3.21.0"
+		"friendsofphp/php-cs-fixer": "^v3.89.1",
+		"kubawerlos/php-cs-fixer-custom-fixers": "^v3.35.1"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-latest"
