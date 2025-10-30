@@ -30,7 +30,6 @@ if ([] === $dirsToFix)
 $finder = PhpCsFixer\Finder::create()
 	->in($dirsToFix)
 	->exclude([
-		"Migrations",
 		"node_modules",
 		"secrets",
 		"var",
