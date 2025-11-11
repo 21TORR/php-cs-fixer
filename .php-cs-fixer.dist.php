@@ -12,6 +12,7 @@ $dirsToFix = array_filter(
 		"app",
 		"config",
 		"custom",
+		"migrations",
 		"public",
 		"src",
 		"tests",
