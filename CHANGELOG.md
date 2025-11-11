@@ -1,3 +1,9 @@
+1.1.7
+=====
+
+* (bug) Add missing `migrations` entry in possible list of directories to scan.
+
+
 1.1.6
 =====
 
