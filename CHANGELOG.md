@@ -1,3 +1,9 @@
+1.1.8
+=====
+
+* (bug) Exclude `reference.php` in PHP-CS-Fixer config.
+
+
 1.1.7
 =====
 
