@@ -37,6 +37,7 @@ $finder = PhpCsFixer\Finder::create()
 		"vendor",
 		"vendor-bin",
 	])
+	->notPath("reference.php")
 	->ignoreUnreadableDirs();
 
 $config = (new PhpCsFixer\Config())
